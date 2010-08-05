@@ -1,20 +1,11 @@
-%h1= t('.title')
-%p= link_to t('.new_post'), new_post_path
-
-%table
-  %thead
-    %tr
-      %th= Post.human_attribute_name :title
-      %th= Post.human_attribute_name :text
-      %th= Post.human_attribute_name :published
-      %th{:colspan => 3}= t 'actions'
-  
-  %tbody
-    - for post in @posts
-      %tr{ :class => cycle(:odd, :even) }
-        %td= post.title
-        %td= post.text
-        %td= post.published
-        %td.action= link_to t('show'), post
-        %td.action= link_to t('edit'), edit_post_path(post)
-        %td.action= link_to t('destroy'), post, :confirm => t('are_you_sure'), :method => :delete
+%h1 Блог
+- for post in @posts
+  .post
+    - if post.title.any?
+      %h1= post.title
+    = simple_format post.text
+    %p.data
+      %span{:title => Russian::strftime(post.created_at)}= Russian::strftime(post.created_at, '%e %B')
+      = link_to '*', edit_post_path(post)
+      = link_to '#', post
+.new_link= link_to '+', new_post_path
