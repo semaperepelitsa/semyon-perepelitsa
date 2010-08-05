@@ -1,18 +1,20 @@
+$title_size: 2em
+
 body
   font:
     size: 1.1em
     family: "Times New Roman", serif
   margin: 0 auto
   margin-top: 1em
+  padding: 0 2em
   max-width: 640px
   min-width: 320px
-  padding: 0 2em
 
 h1
   margin-bottom: 0.2em
   font:
     family: "Trebuchet MS", sans-serif
-    size: 2em
+    size: $title_size
   
 p
   margin-bottom: 0.8em
@@ -34,3 +36,12 @@ div.new_link
   a
     text-decoration: none
     color: blue
+    
+div.form
+  input.title, textarea
+    font-family: 'Consolas', monospace
+    width: 640px
+  input.title
+    font-size: $title_size
+  textarea
+    height: 800px
