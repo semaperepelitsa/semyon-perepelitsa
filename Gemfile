@@ -30,3 +30,5 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem 'haml'
+
+gem 'russian'
