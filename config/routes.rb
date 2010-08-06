@@ -1,4 +1,8 @@
 Blog::Application.routes.draw do
+  get "session/create"
+
+  get "session/destroy"
+
   resources :posts
 
   # The priority is based upon order of creation:
