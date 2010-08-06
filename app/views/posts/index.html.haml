@@ -1,11 +1,3 @@
 %h1 Блог
-- for post in @posts
-  .post
-    - if post.title.any?
-      %h1= post.title
-    = simple_format post.text
-    %p.data
-      %span{:title => Russian::strftime(post.created_at)}= Russian::strftime(post.created_at, '%e %B')
-      = link_to '*', edit_post_path(post)
-      = link_to '#', post
+= render :partial => 'post', :collection => @posts
 .new_link= link_to '+', new_post_path
