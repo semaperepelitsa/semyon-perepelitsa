@@ -1,7 +1,6 @@
-Blog::Application.routes.draw do
-  get "session/create"
-
-  get "session/destroy"
+Blog::Application.routes.draw do  
+  match 'i' => 'session#new', :as => :login
+  match 'logout' => 'session#destroy'
 
   resources :posts
 
