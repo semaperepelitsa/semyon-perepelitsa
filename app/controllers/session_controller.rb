@@ -1,11 +1,15 @@
 class SessionController < ApplicationController
   def new
-    create
+    redirect_to root_path if admin?
   end
   
   def create
-    session[:admin] ||= true
-    redirect_to root_path
+    if User.first.password?(params[:password])
+      session[:admin] = true
+      redirect_to root_path
+    else
+      render :action => "new"
+    end
   end
 
   def destroy
