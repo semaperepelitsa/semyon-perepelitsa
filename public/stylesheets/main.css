@@ -41,3 +41,6 @@ div.form input.title {
   font-size: 2em; }
 div.form textarea {
   height: 800px; }
+div.form input[type=password] {
+  font-size: 1.5em;
+  width: 100%; }
