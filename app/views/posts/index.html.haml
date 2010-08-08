@@ -1,3 +1,4 @@
 %h1 Блог
 = render :partial => 'post', :collection => @posts
-.new_link= link_to '+', new_post_path
+- if admin?
+  .new_link= link_to '+', new_post_path
