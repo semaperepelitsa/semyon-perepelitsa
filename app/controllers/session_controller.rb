@@ -1,12 +1,15 @@
 class SessionController < ApplicationController
+  def new
+    create
+  end
+  
   def create
+    session[:admin] ||= true
+    redirect_to root_path
   end
 
   def destroy
-  end
-  
-  private
-  
-  def check password
+    reset_session
+    redirect_to root_path
   end
 end
