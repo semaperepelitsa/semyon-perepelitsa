@@ -1,5 +1,6 @@
 Blog::Application.routes.draw do  
-  match 'i' => 'session#new', :as => :login
+  match 'i' => 'session#new', :as => :login, :via => :get
+  match 'i' => 'session#create', :as => :login, :via => :post
   match 'logout' => 'session#destroy'
 
   resources :posts
