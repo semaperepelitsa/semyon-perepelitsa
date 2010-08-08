@@ -8,9 +8,10 @@ body {
   min-width: 320px; }
 
 h1 {
+  margin-top: 0em;
   margin-bottom: 0.2em;
   font-family: "Trebuchet MS", sans-serif;
-  font-size: 2em; }
+  font-size: 1.5em; }
 
 p {
   margin-bottom: 0.8em;
@@ -38,7 +39,7 @@ div.form input.title, div.form textarea {
   width: 640px;
   padding: 5px; }
 div.form input.title {
-  font-size: 2em; }
+  font-size: 1.5em; }
 div.form textarea {
   height: 800px; }
 div.form input[type=password] {
