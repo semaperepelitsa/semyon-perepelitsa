@@ -1,13 +1,9 @@
 = form_for(@post) do |f|
   .form
-    - if @post.errors.any?
-      #errorExplanation
-        %h2= "#{pluralize(@post.errors.count, 'error')} prohibited this user from being saved:"
-        %ul
-        - @post.errors.full_messages.each do |msg|
-          %li= msg
     %p= f.text_field :title, :class => 'title'
     %p= f.text_area :text, :class => 'text'
+    - unless @post.errors[:text].nil?
+      .error= "Текст #{@post.errors[:text]}"
     .field
       = f.label :published
       = f.check_box :published
