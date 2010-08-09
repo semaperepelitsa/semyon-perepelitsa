@@ -3,7 +3,7 @@ Blog::Application.routes.draw do
   match 'i' => 'session#create', :as => :login, :via => :post
   match 'logout' => 'session#destroy'
 
-  resources :stream, :controller => :posts, :as => :posts
+  resources :stream, :controller => :posts, :as => :posts, :path_names => { :new => "write" }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
