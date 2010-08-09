@@ -2,7 +2,7 @@
   .form
     %p= f.text_field :title, :class => 'title'
     %p= f.text_area :text, :class => 'text'
-    - unless @post.errors[:text].nil?
+    - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"
     .field
       = f.label :published
