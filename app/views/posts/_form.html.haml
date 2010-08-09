@@ -4,9 +4,10 @@
     = f.text_area :text, :class => 'text'
     - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"
-  .field
-    = f.label :published
-    = f.check_box :published
-
   .actions
-    = f.submit
+    - if @post.published?
+      = f.submit 'Сохранить', :name => 'save_button'
+      = f.submit 'Сохранить скрытым', :name => 'save_and_hide_button'
+    - else
+      = f.submit 'Опубликовать', :name => 'publish_button'
+      = f.submit 'Сохранить скрытым', :name => 'save_button'
