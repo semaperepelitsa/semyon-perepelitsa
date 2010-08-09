@@ -1,12 +1,12 @@
 = form_for(@post) do |f|
-  .form
-    %p= f.text_field :title, :class => 'title'
-    %p= f.text_area :text, :class => 'text'
+  .field= f.text_field :title, :class => 'title'
+  .field
+    = f.text_area :text, :class => 'text'
     - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"
-    .field
-      = f.label :published
-      = f.check_box :published
-  
-    .actions
-      = f.submit
+  .field
+    = f.label :published
+    = f.check_box :published
+
+  .actions
+    = f.submit

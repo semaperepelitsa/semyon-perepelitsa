@@ -1,8 +1,4 @@
-$title_size: 1.5em
-$black: #000000
-$hover: #CC0000
-$link: #0055CC
-$visited: #990099
+@import "variables"
 
 body
   font:
@@ -40,22 +36,7 @@ div.new_link
   a
     text-decoration: none
     color: $link
-    
-div.form
-  input.title, textarea
-    font-family: 'Consolas', monospace
-    width: 640px
-    padding: 5px
-  input.title
-    font-size: $title_size
-  textarea
-    height: 800px
-  input[type=password]
-    font-size: 1.5em
-    width: 100%
-  div.error
-    color: red
-    
+
 div.header
   font-size: 1.2em
   margin-bottom: 2em
