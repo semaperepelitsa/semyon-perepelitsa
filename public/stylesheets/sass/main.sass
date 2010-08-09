@@ -1,6 +1,8 @@
 $title_size: 1.5em
 $black: #000000
 $hover: #CC0000
+$link: #0055CC
+$visited: #990099
 
 body
   font:
@@ -37,7 +39,7 @@ div.new_link
   text-align: center
   a
     text-decoration: none
-    color: blue
+    color: $link
     
 div.form
   input.title, textarea
@@ -59,6 +61,12 @@ div.header
     color: $black
   a:hover, a:visited:hover
     color: $hover
-    
+
+a:link
+  color: $link
+
+a:visited
+  color: $visited
+
 a:hover, a:visited:hover
   color: $hover
