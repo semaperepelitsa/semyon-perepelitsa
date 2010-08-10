@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.order('created_at desc')
+    @posts = Post.published_unless(admin?).recent
     
     @at_home = true
 
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
-    @post = Post.find(params[:id])
+    @post = Post.published_unless(admin?).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
