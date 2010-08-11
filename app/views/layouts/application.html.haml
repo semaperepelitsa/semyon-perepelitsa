@@ -13,4 +13,6 @@
     .header
       = link_to_unless @at_home, 'Поток мыслей', posts_path
       = link_to_unless @at_drafts, '~', unpublished_posts_path if admin?
+    - if admin?
+      .new_link= link_to '+', new_post_path
     = yield
