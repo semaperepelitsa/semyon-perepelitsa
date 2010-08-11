@@ -10,5 +10,7 @@
       = javascript_include_tag 'rails'
     = csrf_meta_tag
   %body
-    .header= link_to_unless @at_home, 'Поток мыслей', posts_path
+    .header
+      = link_to_unless @at_home, 'Поток мыслей', posts_path
+      = link_to_unless @at_drafts, '~', unpublished_posts_path if admin?
     = yield
