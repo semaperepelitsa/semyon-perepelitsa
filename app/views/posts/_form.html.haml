@@ -5,9 +5,5 @@
     - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"
   .actions
-    - if @post.published?
-      = f.submit 'Сохранить', :name => 'save_button'
-      = f.submit 'Сохранить скрытым', :name => 'save_and_hide_button'
-    - else
-      = f.submit 'Опубликовать', :name => 'publish_button'
-      = f.submit 'Сохранить скрытым', :name => 'save_button'
+    = f.submit 'Сохранить опубликованным', :name => :publish, :class => ('default' if @post.published?)
+    = f.submit 'Сохранить скрытым', :class => ('default' unless @post.published?)
