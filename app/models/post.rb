@@ -7,4 +7,5 @@ class Post < ActiveRecord::Base
   def self.published_unless(condition)
     condition ? scoped : published
   end
+  scope :unpublished, where(:published => false)
 end
