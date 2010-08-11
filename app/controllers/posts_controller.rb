@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.published_unless(admin?).recent
+    @posts = Post.recent.published
     
     @at_home = true
 
@@ -23,6 +23,12 @@ class PostsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @post }
     end
+  end
+  
+  def drafts
+    @at_drafts = true
+    @posts = Post.recent.unpublished
+    render 'index'
   end
 
   # GET /posts/new
