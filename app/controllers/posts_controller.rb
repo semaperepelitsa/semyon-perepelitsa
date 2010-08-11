@@ -50,6 +50,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.xml
   def create
+    params[:post][:published] = !params[:publish].nil?
+    
     @post = Post.new(params[:post])
 
     respond_to do |format|
@@ -67,6 +69,8 @@ class PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
+    
+    params[:post][:published] = !params[:publish].nil?
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
