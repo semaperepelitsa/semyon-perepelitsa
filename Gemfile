@@ -32,3 +32,7 @@ gem 'ruby-debug'
 gem 'haml'
 
 gem 'russian'
+
+group :production do
+  gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
+end
