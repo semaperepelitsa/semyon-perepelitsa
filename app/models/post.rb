@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  validates_presence_of :text
+  validates_presence_of :text, :published
   
   scope :recent, order('created_at desc')
   
