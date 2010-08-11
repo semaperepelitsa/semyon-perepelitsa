@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.recent.published
+    @posts = Post.published.recent
     
     @at_home = true
 
