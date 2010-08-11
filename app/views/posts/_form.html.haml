@@ -4,6 +4,9 @@
     = f.text_area :text, :class => 'text'
     - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"
+  .data
+    - unless @post.new_record?
+      = link_to '#', @post
   .actions
     = f.submit 'Сохранить опубликованным', :name => :publish, :class => ('default' if @post.published?)
     = f.submit 'Сохранить скрытым', :class => ('default' unless @post.published?)
