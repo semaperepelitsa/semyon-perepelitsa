@@ -5,8 +5,6 @@ class PostsController < ApplicationController
   # GET /posts.xml
   def index
     @posts = Post.published.recent
-    
-    @at_home = true
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +24,6 @@ class PostsController < ApplicationController
   end
   
   def drafts
-    @at_drafts = true
     @posts = Post.unpublished.last_updated
   end
 
