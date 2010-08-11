@@ -28,7 +28,6 @@ class PostsController < ApplicationController
   def drafts
     @at_drafts = true
     @posts = Post.unpublished.last_updated
-    render 'index'
   end
 
   # GET /posts/new
