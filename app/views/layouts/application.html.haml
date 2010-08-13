@@ -16,3 +16,7 @@
     - if admin?
       .new_link= link_to '+', new_post_path
     = yield
+    - unless admin?
+      .footer
+        Книга отзывов и предложений:
+        = mail_to 'sema@sema.in'
