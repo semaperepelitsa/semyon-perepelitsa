@@ -2,5 +2,8 @@
   = markdownize post.text
   .data
     = compact_timestamp post.created_at
+    - unless post.published?
+      →
+      = compact_timestamp post.updated_at
     = link_to '*', edit_post_path(post) if admin?
     = link_to '#', post
