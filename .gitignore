@@ -4,3 +4,4 @@ log/*.log
 tmp/**/*
 .eprj
 public/stylesheets/*.css
+Gemfile.lock
