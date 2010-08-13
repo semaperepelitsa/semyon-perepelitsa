@@ -1,6 +1,4 @@
 .post
-  - if post.title.any?
-    %h1= post.title
   = simple_format post.text
   .data
     %span{:title => Russian::strftime(post.created_at)}= Russian::strftime(post.created_at, '%e %B')
