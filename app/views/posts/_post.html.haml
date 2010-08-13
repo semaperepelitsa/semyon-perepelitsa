@@ -1,6 +1,6 @@
 .post
   = markdownize post.text
   .data
-    %span{:title => Russian::strftime(post.created_at)}= Russian::strftime(post.created_at, '%e %B')
+    = compact_timestamp post.created_at
     = link_to '*', edit_post_path(post) if admin?
     = link_to '#', post
