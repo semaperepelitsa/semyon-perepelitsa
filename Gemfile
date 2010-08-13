@@ -33,4 +33,6 @@ gem 'haml'
 
 gem 'russian'
 
-gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
+group :production do
+  gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
+end
