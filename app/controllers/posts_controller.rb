@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authorize, :except => [:index, :show]
+  before_filter :set_publish_field, :only => [:create, :update]
   
   # GET /posts
   # GET /posts.xml
@@ -46,8 +47,6 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.xml
   def create
-    params[:post][:published] = !params[:publish].nil?
-    
     @post = Post.new(params[:post])
 
     respond_to do |format|
@@ -65,8 +64,6 @@ class PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
-    
-    params[:post][:published] = !params[:publish].nil?
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -89,5 +86,11 @@ class PostsController < ApplicationController
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  
+  def set_publish_field
+    params[:post][:published] = !params[:publish].nil?
   end
 end
