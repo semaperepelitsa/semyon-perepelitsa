@@ -4,7 +4,9 @@
     - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"
   .actions.right
-    = delete_tag(post_path(@post)) unless @post.new_record?
+    - unless @post.new_record?
+      = form_tag post_path(@post), :method => :delete do
+        = submit_tag 'Удалить', :class => 'delete'
   .actions
     = f.submit 'Сохранить опубликованным', :name => :publish, :class => ('default' if @post.published?)
     = f.submit 'Сохранить скрытым', :class => ('default' unless @post.published?)
