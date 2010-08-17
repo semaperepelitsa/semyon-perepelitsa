@@ -4,7 +4,7 @@
     - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"
   - unless @post.new_record?
-    .actions.right= link_to 'Удалить', @post, :method => 'delete', :confirm => 'Точно удалить?', :class => 'delete'
+    .actions.right= link_to '×', @post, :method => 'delete', :confirm => 'Точно удалить?', :class => 'delete'
   .actions
     = f.submit 'Сохранить опубликованным', :name => :publish, :class => ('default' if @post.published?)
     = f.submit 'Сохранить скрытым', :class => ('default' unless @post.published?)
