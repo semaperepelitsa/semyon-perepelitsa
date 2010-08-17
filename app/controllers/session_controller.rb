@@ -4,11 +4,13 @@ class SessionController < ApplicationController
   end
   
   def create
-    if User.first.password?(params[:password])
+    @user = User.first
+    if @user.password?(params[:password])
       session[:admin] = true
       redirect_to root_path
     else
-      render :action => "new"
+      @user.errors[:password] = 'не верен'
+      render :new
     end
   end
 

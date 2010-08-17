@@ -2,3 +2,5 @@
 .form
   = form_tag login_path do
     = password_field_tag :password
+    - if @user && @user.errors[:password]
+      .error= "Пароль #{@user.errors[:password]}"
