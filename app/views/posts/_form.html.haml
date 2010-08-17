@@ -3,10 +3,8 @@
     = f.text_area :text, :class => 'text'
     - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"
-  .actions.right
-    - unless @post.new_record?
-      = form_tag @post, :method => :delete do
-        = submit_tag 'Удалить', :class => 'delete'
+  - unless @post.new_record?
+    .actions.right= link_to 'Удалить', @post, :method => 'delete', :confirm => 'Точно удалить?', :class => 'delete'
   .actions
     = f.submit 'Сохранить опубликованным', :name => :publish, :class => ('default' if @post.published?)
     = f.submit 'Сохранить скрытым', :class => ('default' unless @post.published?)
