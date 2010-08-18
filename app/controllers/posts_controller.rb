@@ -12,6 +12,10 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = Post.published_unless(admin?).find(params[:id])
+    if params[:id] != @post.to_param
+      headers["Status"] = "301 Moved Permanently"
+      redirect_to @post
+    end
   end
   
   def drafts
