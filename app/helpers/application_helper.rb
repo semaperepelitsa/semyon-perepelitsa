@@ -3,13 +3,12 @@ module ApplicationHelper
     BlueCloth.new(text).to_html.html_safe
   end
   
-  def title(str = nil)
-    if str
-      @page_title = str
-    elsif @page_title.nil?
-      @page_title = 'Поток мыслей'
+  def page_title
+    if @page_title.present?
+      @page_title
+    else
+      'Поток мыслей'
     end
-    @page_title
   end
   
   def counter_tag

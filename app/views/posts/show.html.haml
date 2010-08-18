@@ -1,1 +1,2 @@
+- @page_title = @post.title.present? ? @post.title : 'Мысль'
 = render :partial => 'post', :locals => {:post => @post}
