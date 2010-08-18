@@ -3,7 +3,7 @@ Blog::Application.routes.draw do
   match 'i' => 'session#create', :as => :login, :via => :post
   match 'logout' => 'session#destroy'
 
-  resources :stream, :controller => :posts, :as => :posts, :path_names => { :new => "write" } do
+  resources :stream, :controller => :posts, :as => :posts do
     get :drafts, :on => :collection, :as => :unpublished
   end
 
