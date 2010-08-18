@@ -1,4 +1,7 @@
-Blog::Application.routes.draw do  
+Blog::Application.routes.draw do
+  # Website ownership verification for Yandex
+  match "yandex_#{APP_CONFIG['yandex_verification_key']}.txt" => proc { [200, {}, ""] }
+  
   match 'i' => 'session#new', :as => :login, :via => :get
   match 'i' => 'session#create', :as => :login, :via => :post
   match 'logout' => 'session#destroy'
