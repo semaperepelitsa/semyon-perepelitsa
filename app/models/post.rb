@@ -17,8 +17,6 @@ class Post < ActiveRecord::Base
   end
 
   def to_param
-    r = id.to_s
-    r+= "-#{title.parameterize}" if title.present?
-    r
+    [id, title.parameterize].join('-')
   end
 end
