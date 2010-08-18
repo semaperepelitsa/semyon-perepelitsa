@@ -16,4 +16,9 @@ class Post < ActiveRecord::Base
     self.created_at = self.updated_at
   end
 
+  def to_param
+    r = id.to_s
+    r+= "-#{title.parameterize}" if title.present?
+    r
+  end
 end
