@@ -1,5 +1,7 @@
 = form_for(@post) do |f|
   .field
+    = f.text_field :title, :class => 'title'
+  .field
     = f.text_area :text, :class => 'text'
     - unless @post.errors[:text].empty?
       .error= "Текст #{@post.errors[:text]}"

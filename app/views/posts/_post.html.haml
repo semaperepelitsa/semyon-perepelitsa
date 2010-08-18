@@ -1,4 +1,6 @@
 .post
+  - if post.title
+    %h1= title post.title
   = markdownize post.text
   .data
     = compact_timestamp post.created_at
