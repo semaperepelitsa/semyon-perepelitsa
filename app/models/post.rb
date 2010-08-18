@@ -17,6 +17,12 @@ class Post < ActiveRecord::Base
   end
 
   def to_param
-    [id, title.parameterize].join('-')
+    [id, permalink].compact.join('-')
+  end
+  
+  before_update :convert_title_to_permalink
+  
+  def convert_title_to_permalink
+    self.permalink = (title.parameterize if title)
   end
 end
