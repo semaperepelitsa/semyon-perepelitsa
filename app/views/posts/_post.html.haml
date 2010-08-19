@@ -6,5 +6,5 @@
     - unless post.published?
       →
       = compact_timestamp post.updated_at
-    = link_to '*', [:edit, post] if admin?
+    = link_to '*', [:edit, post], :class => "admin"
     = link_to '#', post, :title => "Постоянная ссылка на эту мысль"
