@@ -4,8 +4,7 @@
     = f.text_field :title, :class => 'title'
   .field
     = f.text_area :text, :class => 'text'
-    - unless @post.errors[:text].empty?
-      .error= "#{t('.text')} #{@post.errors[:text]}"
+    = error_for :text, @post
   - unless @post.new_record?
     .actions.right= link_to '×', @post, :method => 'delete', :confirm => t('.confirm_delete'), :class => 'delete'
   .actions

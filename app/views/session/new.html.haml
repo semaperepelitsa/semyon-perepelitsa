@@ -2,5 +2,4 @@
 .form
   = form_tag login_path do
     = password_field_tag :password
-    - if @user && @user.errors[:password]
-      .error= "#{t('.password')} #{@user.errors[:password]}"
+    = error_for :password, @user unless @user.nil?
