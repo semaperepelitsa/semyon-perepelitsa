@@ -32,6 +32,10 @@ describe User do
     @user.password?(pass.to_s + 'a').should == false
     @user.errors.should have_key(:password)
   end
+
+  it "should not store raw password" do
+    @user.password.should_not include(pass) if @user.password.present?
+  end
   
   it "should be valid with all fields" do
     @user.should be_valid
