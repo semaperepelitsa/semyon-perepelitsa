@@ -1,5 +1,4 @@
 = title
-.form
-  = form_tag login_path do
-    = password_field_tag :password
-    = error_for :password, @user unless @user.nil?
+= form_tag login_path do
+  = password_field_tag :password
+  = error_for :password, @user unless @user.nil?
