@@ -33,22 +33,22 @@ describe User do
     @user.errors.should have_key(:password)
   end
   
-  it "should be saved with all fields" do
-    @user.save.should == true
+  it "should be valid with all fields" do
+    @user.should be_valid
   end
   
-  it "should not be saved without any fields" do
+  it "should not be valid without any fields" do
     user = User.new
-    user.save.should == false
+    user.should_not be_valid
   end
   
-  it "should not be saved without hash" do
+  it "should not be valid without hash" do
     user = User.new(:password_hash => salted)
-    user.save.should == false
+    user.should_not be_valid
   end
   
-  it "should not be saved without salt" do
+  it "should not be valid without salt" do
     user = User.new(:password_salt => salt)
-    user.save.should == false
+    user.should_not be_valid
   end
 end
