@@ -13,12 +13,12 @@
     = csrf_meta_tag
   %body
     .header
-      = link_to_unless @at_home, 'Поток мыслей', posts_path
+      = link_to_unless @at_home, t(:stream), posts_path
       = link_to_unless @at_drafts, '~', unpublished_posts_path, :class => "admin"
     .admin.new_link= link_to '+', new_post_path
     = yield
     - unless @at_form
       .footer
-        Книга отзывов и предложений:
+        = "#{t('.feedback')}:"
         = mail_to 'sema@sema.in'
     = counter_tag

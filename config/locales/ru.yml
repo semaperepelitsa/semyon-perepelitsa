@@ -1,0 +1,25 @@
+ru:
+  stream: Поток мыслей
+  layouts:
+    application:
+      feedback: Книга отзывов и предложений
+  posts:
+    show:
+      title: Мысль
+    post:
+      permalink: Постоянная ссылка на эту мысль
+    new:
+      title: Новая мысль
+    edit:
+      title: Редактировать мысль
+    form:
+      text: Текст
+      save_and_publish: Сохранить опубликованным
+      save_and_hide: Сохранить скрытым
+      confirm_delete: Точно удалить?
+    drafts:
+      title: Черновики
+  session:
+    new:
+      title: Пароль
+      password: Пароль

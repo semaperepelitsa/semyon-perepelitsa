@@ -1,6 +1,6 @@
-%h1= @page_title = "Пароль"
+%h1= @page_title = t('.title')
 .form
   = form_tag login_path do
     = password_field_tag :password
     - if @user && @user.errors[:password]
-      .error= "Пароль #{@user.errors[:password]}"
+      .error= "#{t('.password')} #{@user.errors[:password]}"

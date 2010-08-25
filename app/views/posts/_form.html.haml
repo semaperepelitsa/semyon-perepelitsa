@@ -5,9 +5,9 @@
   .field
     = f.text_area :text, :class => 'text'
     - unless @post.errors[:text].empty?
-      .error= "Текст #{@post.errors[:text]}"
+      .error= "#{t('.text')} #{@post.errors[:text]}"
   - unless @post.new_record?
-    .actions.right= link_to '×', @post, :method => 'delete', :confirm => 'Точно удалить?', :class => 'delete'
+    .actions.right= link_to '×', @post, :method => 'delete', :confirm => t('.confirm_delete'), :class => 'delete'
   .actions
-    = f.submit 'Сохранить опубликованным', :name => :publish, :class => ('default' if @post.published?)
-    = f.submit 'Сохранить скрытым', :class => ('default' unless @post.published?)
+    = f.submit t('.save_and_publish'), :name => :publish, :class => ('default' if @post.published?)
+    = f.submit t('.save_and_hide'), :class => ('default' unless @post.published?)

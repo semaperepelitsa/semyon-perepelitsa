@@ -7,7 +7,7 @@ module ApplicationHelper
     if @page_title.present?
       @page_title
     else
-      'Поток мыслей'
+      t :stream
     end
   end
   
