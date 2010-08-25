@@ -10,7 +10,6 @@ class SessionController < ApplicationController
       cookies.permanent[:admin] = true
       redirect_to root_path
     else
-      @user.errors[:password] = 'не верен'
       render :new
     end
   end

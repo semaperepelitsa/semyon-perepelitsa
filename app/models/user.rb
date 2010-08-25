@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  attr_reader :password # needed for handling password errors
   validates_presence_of :password_hash, :password_salt
   
   def self.encrypt(password, salt = '')
@@ -17,7 +18,9 @@ class User < ActiveRecord::Base
   end
   
   def password?(val)
-    self.password_hash.nil? ? false : self.password_hash == encrypt(val)
+    valid = self.password_hash == encrypt(val)
+    self.errors.add :password unless valid
+    valid
   end
   
   def new_password_salt!
