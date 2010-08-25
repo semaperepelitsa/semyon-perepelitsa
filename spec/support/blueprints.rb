@@ -1,9 +1,8 @@
 require 'machinist/active_record'
 
-# Add your blueprints here.
-#
-# e.g.
-#   Post.blueprint do
-#     title { "Post #{sn}" }
-#     body  { "Lorem ipsum..." }
-#   end
+Post.blueprint do
+  title { "Post #{sn}" }
+  text { "Lorem ipsum dolor sit amet..." }
+  published { true }
+end
+
