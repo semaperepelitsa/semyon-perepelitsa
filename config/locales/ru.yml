@@ -13,7 +13,6 @@ ru:
     edit:
       title: Редактировать мысль
     form:
-      text: Текст
       save_and_publish: Сохранить опубликованным
       save_and_hide: Сохранить скрытым
       confirm_delete: Точно удалить?
@@ -22,4 +21,9 @@ ru:
   session:
     new:
       title: Пароль
-      password: Пароль
+  activerecord:
+    attributes:
+      post:
+        text: Текст
+      user:
+        password: Пароль
