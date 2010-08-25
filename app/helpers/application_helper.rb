@@ -4,11 +4,15 @@ module ApplicationHelper
   end
   
   def page_title
-    if @page_title.present?
-      @page_title
-    else
-      t :stream
-    end
+    title unless @page_title.present?
+    @page_title
+  end
+  
+  def title(str = nil, &block)
+    str = t '.title', :default => :stream unless str.present?
+    content = @page_title = str
+    content << ' ' + with_output_buffer(&block) if block
+    content_tag :h1, content.html_safe
   end
   
   def counter_tag
