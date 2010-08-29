@@ -12,9 +12,7 @@ class PostSweeper < ActionController::Caching::Sweeper
   private
   
   def expire_cache_for(post)
-    if post.published?
-      expire_page :controller => 'posts', :action => 'index'
-      expire_page :controller => 'posts', :action => 'show', :id => post
-    end
+    expire_page :controller => 'posts', :action => 'index' if post.published?
+    expire_page :controller => 'posts', :action => 'show', :id => post
   end
 end
