@@ -10,10 +10,14 @@ class Post < ActiveRecord::Base
   end
   scope :unpublished, where(:published => false)
   
-  before_update :update_created_at, :if => proc {|p| p.published_change == [false, true]}
+  before_update :update_created_at, :if => :publish?
   
   def update_created_at
     self.created_at = self.updated_at
+  end
+  
+  def publish?
+    self.published_change == [false, true]
   end
 
   def to_param
