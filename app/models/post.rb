@@ -10,10 +10,10 @@ class Post < ActiveRecord::Base
   end
   scope :unpublished, where(:published => false)
   
-  before_update :update_created_at, :if => :publish?
+  before_update :update_timestamps, :if => :publish?
   
-  def update_created_at
-    self.created_at = self.updated_at
+  def update_timestamps
+    self.created_at = self.updated_at = Time.now
   end
   
   def publish?
