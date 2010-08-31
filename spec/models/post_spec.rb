@@ -56,4 +56,15 @@ describe Post do
     post.permalink.should be_blank
   end
   
+  describe "should properly generate link when it" do
+    it "has permalink" do
+      post = Post.make! :title => 'Two words'
+      post.to_param.should == post.id.to_s + '-' + post.permalink
+    end
+    it "has no permalink" do
+      post = Post.make! :title => ''
+      post.to_param.should == post.id.to_s
+    end
+  end
+  
 end
