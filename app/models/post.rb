@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
     [id, permalink].compact.join('-')
   end
   
-  before_update :convert_title_to_permalink
+  before_save :convert_title_to_permalink
   
   def convert_title_to_permalink
     self.permalink = (title.parameterize if title)
