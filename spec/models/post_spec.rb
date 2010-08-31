@@ -37,4 +37,23 @@ describe Post do
     end
   end
   
+  describe "should automatically generate permalink from title when it" do
+    before :all do
+      @post = Post.make!(:title => 'Permalink test')
+    end
+    it "is created" do
+      @post.permalink.should == 'permalink-test'
+    end
+    it "is updated" do
+      @post.title = 'Changed title'
+      @post.save!
+      @post.permalink.should == 'changed-title'
+    end
+  end
+  
+  it "should keep permalink blank if there is no title" do
+    post = Post.make!(:title => '')
+    post.permalink.should be_blank
+  end
+  
 end
