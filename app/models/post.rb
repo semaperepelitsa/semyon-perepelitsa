@@ -21,7 +21,11 @@ class Post < ActiveRecord::Base
   end
 
   def to_param
-    [id, permalink].compact.join('-')
+    if permalink.present?
+      [id, permalink].join('-')
+    else
+      id.to_s
+    end
   end
   
   before_save :convert_title_to_permalink
