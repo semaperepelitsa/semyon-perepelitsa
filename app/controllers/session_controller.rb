@@ -6,8 +6,7 @@ class SessionController < ApplicationController
   def create
     @user = User.first
     if @user.password?(params[:password])
-      session[:admin] = true
-      cookies.permanent[:admin] = true
+      admin!
       redirect_to root_path
     else
       render :new
@@ -15,8 +14,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    reset_session
-    cookies.delete(:admin)
+    admin! false
     redirect_to root_path
   end
 end

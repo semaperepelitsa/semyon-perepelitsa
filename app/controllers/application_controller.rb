@@ -15,4 +15,14 @@ class ApplicationController < ActionController::Base
   def admin?
     session[:admin]
   end
+  
+  def admin!(login = true)
+    if login
+      session[:admin] = true
+      cookies.permanent[:admin] = true
+    else
+      reset_session
+      cookies.delete(:admin)
+    end
+  end
 end
