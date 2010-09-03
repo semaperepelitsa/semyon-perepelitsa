@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.published_unless(admin?).find(params[:id])
-    if params[:id] != @post.to_param
+    if params[:id].to_s != @post.to_param
       headers["Status"] = "301 Moved Permanently"
       redirect_to @post
     end
