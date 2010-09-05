@@ -1,6 +1,6 @@
 @import "variables"
 
-div.field
+ul.fields li
   input[type=text], textarea
     font-family: 'Consolas', monospace
   input.title, textarea.text
@@ -15,23 +15,25 @@ div.field
     font-size: 1.5em
     width: 100%
 
-div.actions
+ul.actions
   margin-top: 1em
-  input[type=submit]
-    padding: 0.3em
-    font:
-      family: "Trebuchet MS", sans-serif
-      size: 0.9em
-  a.delete
-    color: red
-    text-decoration: none
-    font:
-      size: 2em
-      family: sans-serif
-  a.delete:hover
-    color: $link
-  .default
-    font-weight: bold
-
-div.right
-  float: right
+  li
+    display: inline
+    input[type=submit]
+      padding: 0.3em
+      font:
+        family: "Trebuchet MS", sans-serif
+        size: 0.9em
+      height: 2em
+    a.delete:hover
+      color: $link
+    .default
+      font-weight: bold
+  li.delete
+    float: right
+    a
+      color: red
+      text-decoration: none
+      font:
+        size: 2em
+        family: sans-serif

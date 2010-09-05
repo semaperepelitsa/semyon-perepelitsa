@@ -1,12 +1,13 @@
 - @at_form = true
 = form_for(@post) do |f|
-  .field
-    = f.text_field :title, :class => 'title'
-  .field
-    = f.text_area :text, :class => 'text'
-    = error_for :text, @post
-  - unless @post.new_record?
-    .actions.right= link_to '×', @post, :method => 'delete', :confirm => t('.confirm_delete'), :class => 'delete'
-  .actions
-    = f.submit t('.save_and_publish'), :name => :publish, :class => ('default' if @post.published?)
-    = f.submit t('.save_and_hide'), :class => ('default' unless @post.published?)
+  %ul.fields
+    %li
+      = f.text_field :title, :class => 'title'
+    %li
+      = f.text_area :text, :class => 'text'
+      = error_for :text, @post
+  %ul.actions
+    %li= f.submit t('.save_and_publish'), :name => :publish, :class => ('default' if @post.published?)
+    %li= f.submit t('.save_and_hide'), :class => ('default' unless @post.published?)
+    - unless @post.new_record?
+      %li.delete= link_to '×', @post, :method => 'delete', :confirm => t('.confirm_delete')
