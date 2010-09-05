@@ -1,7 +1,7 @@
 !!!
 %html{ :lang => I18n.locale }
   %head
-    %meta(charset="utf-8")
+    %meta{ :charset => Rails.application.config.encoding }
     %title= page_title
     = favicon_link_tag
     = auto_discovery_link_tag :rss, posts_url(:rss)
