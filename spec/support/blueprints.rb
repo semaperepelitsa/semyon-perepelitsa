@@ -5,4 +5,3 @@ Post.blueprint do
   text { "Lorem ipsum dolor sit amet #{sn}..." }
   published { true }
 end
-
