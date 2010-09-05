@@ -10,9 +10,9 @@ module ApplicationHelper
   
   def title(str = nil, &block)
     str = t '.title', :default => :stream unless str.present?
-    content = @page_title = str
-    content << ' ' + with_output_buffer(&block) if block
-    content_tag :h1, content.html_safe
+    @page_title = str.clone
+    str << ' ' + with_output_buffer(&block) if block
+    content_tag :h1, str.html_safe
   end
   
   def error_for(field, model)
