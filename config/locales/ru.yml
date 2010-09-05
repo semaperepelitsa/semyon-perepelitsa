@@ -27,3 +27,6 @@ ru:
         text: Текст
       user:
         password: Пароль
+  date:
+    formats:
+      short: "%e %B"
