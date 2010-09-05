@@ -1,23 +1,25 @@
 !!!
 %html
   %head
-    %meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    %meta(charset="utf-8")
     %title= page_title
     = favicon_link_tag
     = auto_discovery_link_tag :rss, posts_url(:rss)
     = stylesheet_link_tag 'http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css', 'main'
     - if admin?
       = stylesheet_link_tag 'admin' 
+    /[if lte IE 8]
+      = javascript_include_tag 'http://cachedcommons.org/javascripts/html5/html5-enabled-min.js'
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', 'jquery.cookie', 'rails', 'application'
     = csrf_meta_tag
   %body
-    .header
+    %header
       = link_to_unless @at_home, t(:stream), posts_path
       = link_to_unless @at_drafts, '~', unpublished_posts_path, :class => "admin"
-    .admin.new_link= link_to '+', new_post_path
-    = yield
+      .admin.new_link= link_to '+', new_post_path
+    %section= yield
     - unless @at_form
-      .footer
+      %footer
         = "#{t('.feedback')}:"
         = mail_to 'sema@sema.in'
     = counter_tag

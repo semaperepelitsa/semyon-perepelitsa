@@ -33,12 +33,22 @@ strong
 em
   font-style: italic
 
-div.post
+article
+  display: block
   margin-top: 3em
+  details
+    text-align: right
+    color: gray
+    display: block
 
-div.data
-  text-align: right
-  color: gray
+header
+  display: block
+  font-size: 1.2em
+  margin-bottom: 2em
+  a:link, a:visited
+    color: black
+  a:hover, a:visited:hover
+    color: $hover
 
 div.new_link
   position: absolute
@@ -51,15 +61,8 @@ div.new_link
     text-decoration: none
     color: $link
 
-div.header
-  font-size: 1.2em
-  margin-bottom: 2em
-  a:link, a:visited
-    color: black
-  a:hover, a:visited:hover
-    color: $hover
-
-div.footer
+footer
+  display: block
   margin-top: 2em
   text-align: center
   font-size: 0.8em
