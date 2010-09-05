@@ -1,5 +1,6 @@
 %article
-  %h1= post.title
+  - if post.title.present?
+    %h1= post.title
   = markdownize post.text
   %details
     = compact_timestamp post.created_at
