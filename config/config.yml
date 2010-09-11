@@ -1,4 +1,5 @@
 yandex_verification_key: 5bb1eff3a4be8320
+openid_xrds_url: "http://openid.yandex.ru/semaperepelitsa/yadis/"
 old_website:
   url: http://old.sema.in/blog/
   path: blog/
