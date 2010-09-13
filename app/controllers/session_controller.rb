@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     @user = User.first
     if @user.password?(params[:password])
       admin!
-      redirect_to root_path
+      redirect_to params[:then] || root_path
     else
       render :new
     end

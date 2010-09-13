@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def authorize
     unless admin?
       admin! false
-      redirect_to login_path
+      redirect_to login_path(:then => request.request_uri)
       false
     end
   end
