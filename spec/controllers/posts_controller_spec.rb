@@ -32,22 +32,20 @@ describe PostsController do
     it_should_behave_like "both sides"
 
     describe "should redirect to login page when it response to" do
-      after :each do
-        response.should be_redirect
-        response.should redirect_to(login_url)
-      end
-      
       it "GET drafts page" do
         get :drafts
+        response.should redirect_to(login_url(:then => unpublished_posts_path))
       end
 
       it "GET new post page" do
         get :new
+        response.should redirect_to(login_url(:then => new_post_path))
       end
+    end  
 
-      it "POST post" do
-        post :create, :post => Post.make.attributes
-      end
+    it "should not POST post" do
+      post :create, :post => Post.make.attributes
+      response.should_not be_success
     end
 
     it "should not find unpublished posts" do
