@@ -5,7 +5,7 @@
     %title= page_title
     = favicon_link_tag
     = auto_discovery_link_tag :rss, posts_url(:rss)
-    = stylesheet_link_tag 'http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css', 'main'
+    = stylesheet_link_tag 'http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css', 'application'
     = stylesheet_link_tag 'admin' if admin?
     /[if lte IE 8]
       = javascript_include_tag 'http://cachedcommons.org/javascripts/html5/html5-enabled-min.js'
