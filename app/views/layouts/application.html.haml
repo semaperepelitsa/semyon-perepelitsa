@@ -15,7 +15,7 @@
     %header
       = link_to_unless @at_home, t(:stream), posts_path
       = link_to_unless @at_drafts, '~', unpublished_posts_path, :class => "admin", :rel => 'nofollow'
-      .admin.new_link= link_to '+', new_post_path, :rel => 'nofollow'
+      = link_to '+', new_post_path, :class => 'admin new_link', :rel => 'nofollow'
     %section#main= yield
     - unless @at_form
       %footer
