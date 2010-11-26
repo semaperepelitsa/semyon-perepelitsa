@@ -11,7 +11,7 @@
     = stylesheet_link_tag 'admin' if admin?
     /[if lte IE 8]
       = javascript_include_tag 'http://cachedcommons.org/javascripts/html5/html5-enabled-min.js'
-    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', 'jquery.cookie', 'rails', 'application'
+    = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
     %header

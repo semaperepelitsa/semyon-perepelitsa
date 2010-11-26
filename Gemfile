@@ -32,6 +32,7 @@ group :development, :test do
   gem 'mocha'
 end
 
+gem 'jquery-rails'
 gem 'haml'
 
 gem 'russian'
