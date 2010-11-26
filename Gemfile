@@ -33,7 +33,7 @@ group :development, :test do
 end
 
 gem 'jquery-rails'
-gem 'haml'
+gem 'haml-rails'
 
 gem 'russian'
 
