@@ -7,7 +7,7 @@ module PostsHelper
   
   def timestamps_for(post)
     res = compact_timestamp(post.created_at)
-    res << ' &rarr; '.html_safe + compact_timestamp(post.updated_at) unless post.published?
+    res << ' … '.html_safe + compact_timestamp(post.updated_at) unless post.published?
     res
   end
 end
