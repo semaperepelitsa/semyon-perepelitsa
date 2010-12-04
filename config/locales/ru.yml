@@ -4,8 +4,6 @@ ru:
     application:
       feedback: Книга отзывов и предложений
   posts:
-    show:
-      title: Мысль
     post:
       permalink: Постоянная ссылка на эту мысль
     new:
