@@ -1,0 +1,24 @@
+en:
+  title: Thought Stream
+  layouts:
+    application:
+      feedback: Feedback
+  posts:
+    post:
+      permalink: Permanent link to this thought
+    new:
+      title: New thought
+    edit:
+      title: Edit thought
+    form:
+      save_and_publish: Save as published
+      save_and_hide: Save as hidden
+      confirm_delete: Are you sure?
+    drafts:
+      title: Drafts
+  session:
+    new:
+      title: Password
+  date:
+    formats:
+      short: "%B %e"
