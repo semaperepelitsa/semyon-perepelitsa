@@ -3,18 +3,6 @@ module ApplicationHelper
     BlueCloth.new(text).to_html.html_safe
   end
   
-  def page_title
-    title unless @page_title.present?
-    @page_title
-  end
-  
-  def title(str = nil, &block)
-    str = t '.title', :default => :stream unless str.present?
-    @page_title = str.clone
-    str << ' ' + with_output_buffer(&block) if block
-    content_tag :h1, str.html_safe
-  end
-  
   def error_for(field, model)
     res = ''
     human_field = model.class.human_attribute_name(field)
