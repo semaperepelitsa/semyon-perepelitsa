@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'russian'
 gem 'smart_titles'
 gem 'rand'
+gem 'nokogiri', :group => :development
 
 group :development, :test do
   gem 'rspec-rails', '>=2.0.0.beta'
