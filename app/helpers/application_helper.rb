@@ -25,4 +25,12 @@ try { var yaCounter1309037 = new Ya.Metrika(1309037); } catch(e){}
 EOC
     end
   end
+  
+  def ad
+    <<END
+<span style="background-color:#dd2850; padding:2px; font-size:80%; color:white;">* * *</span>
+<span style="background-color:#000000; padding:2px; font-size:80%; color: white;">Публикации щедро не оплачены</span>
+<span style="background-color:#dd2850; padding:2px; font-size:80%; color:white;">* * *</span>
+END
+  end
 end

@@ -19,6 +19,11 @@
         = link_to_unless @at_home, t(:title), posts_path
         = link_to_unless @at_drafts, '~', unpublished_posts_path, :class => "admin", :rel => 'nofollow'
         = yield :nav
+        <span style="background-color:#777; padding:2px; margin-left:3em; font-size:50%; color:white;">* * *</span>
+        <span style="background-color:#eee; padding:2px; font-size:60%; color: black;">Рекламы нет</span>
+        <span style="background-color:#777; padding:2px; font-size:50%; color:white;">*</span>
+        <span style="background-color:#eee; padding:2px; font-size:60%; color: black;">Публикации нифига не оплачены</span>
+        <span style="background-color:#777; padding:2px; font-size:50%; color:white;">* * *</span>
         = link_to '+', new_post_path, :class => 'admin new_link', :rel => 'nofollow'
     %section#main= yield
     - unless @at_form
