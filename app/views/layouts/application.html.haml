@@ -16,8 +16,8 @@
   %body
     %header
       %nav
-        = link_to_unless current_page?(:controller => 'posts', :action => 'index'), t(:title), posts_path
-        = link_to_unless current_page?(:controller => 'posts', :action => 'drafts'), '~', unpublished_posts_path, :class => "admin", :rel => 'nofollow'
+        = link_to_unless current_page?(posts_url), t(:title), posts_path
+        = link_to_unless current_page?(unpublished_posts_path), '~', unpublished_posts_path, :class => "admin", :rel => 'nofollow'
         = yield :nav
         <span style="background-color:#777; padding:2px; margin-left:3em; font-size:50%; color:white;">* * *</span>
         <span style="background-color:#eee; padding:2px; font-size:60%; color: black;">Рекламы нет</span>
