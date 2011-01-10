@@ -2,7 +2,7 @@ class SessionController < ApplicationController
   def new
     redirect_to root_path if admin?
   end
-  
+
   def create
     @user = User.first
     if @user.password?(params[:password])

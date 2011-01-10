@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+
   helper_method :admin?
-  
+
   protected
-  
+
   def authorize
     unless admin?
       admin! false
@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
       false
     end
   end
-  
+
   def admin?
     session[:admin]
   end
-  
+
   def admin!(login = true)
     if login
       session[:admin] = true
