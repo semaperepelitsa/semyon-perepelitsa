@@ -8,17 +8,17 @@ describe PostsController do
     end
 
     it "GET show page for each published post" do
-      [Post.make!, Post.make!(:title => '')].each do |p|
-        get :show, :id => p.to_param
+      [Post.make!, Post.make!(:title => '')].each do |pst|
+        get :show, :id => pst.to_param
         response.should render_template(:show)
-        assigns[:post].should == p
+        assigns[:post].should == pst
       end
     end
 
     it "redirects to proper post show page url" do
-      p = Post.make!
-      get :show, :id => p.id
-      response.should redirect_to(p)
+      pst = Post.make!
+      get :show, :id => pst.id
+      response.should redirect_to(pst)
     end
   end
 
@@ -88,9 +88,9 @@ describe PostsController do
     end
 
     it "POST post" do
-      p = Post.make
-      post :create, :post => p.attributes
-      assigns[:post].text == p.text
+      pst = Post.make
+      post :create, :post => pst.attributes
+      assigns[:post].text == pst.text
     end
 
     it "PUT post and redirect to it" do
