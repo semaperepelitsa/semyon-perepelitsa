@@ -4,12 +4,12 @@ describe PostsController do
   fixtures :posts
 
   shared_examples_for "both sides" do
-    it "should display index page" do
+    it "GET index page" do
       get :index
       response.should render_template(:index)
     end
 
-    it "should display show page on each published post" do
+    it "GET show page for each published post" do
       [Post.make!, Post.make!(:title => '')].each do |p|
         get :show, :id => p.to_param
         response.should render_template(:show)
@@ -17,7 +17,7 @@ describe PostsController do
       end
     end
 
-    it "should redirect to proper post show page url" do
+    it "redirects to proper post show page url" do
       p = Post.make!
       get :show, :id => p.id
       response.should redirect_to(p)
@@ -75,30 +75,30 @@ describe PostsController do
 
     it_should_behave_like "both sides"
 
-    it "should respond to GET drafts page" do
+    it "GET drafts page" do
       get :drafts
       response.should render_template(:drafts)
     end
 
-    it "should respond to GET new post page" do
+    it "GET new post page" do
       get :new
       response.should render_template(:new)
     end
 
-    it "should respond to every GET edit post page" do
+    it "GET edit post page" do
       posts.each do |p|
         get :edit, :id => p.to_param
         response.should render_template(:edit)
       end
     end
 
-    it "should create post" do
+    it "POST post" do
       p = Post.make
       post :create, :post => p.attributes
       assigns[:post].text == p.text
     end
 
-    it "should update valid post and redirect to it" do
+    it "PUT post and redirect to it" do
       posts.each do |p|
         p.text += " updated"
         put :update, :id => p.id, :post => p.attributes
