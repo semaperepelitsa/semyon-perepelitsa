@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe PostsController do
-  fixtures :posts
-
   shared_examples_for "both sides" do
     it "GET index page" do
       get :index
@@ -43,10 +41,9 @@ describe PostsController do
       end
 
       it "GET edit post page" do
-        posts.each do |p|
-          get :edit, :id => p.to_param
-          response.should redirect_to(login_url)
-        end
+        pst = Post.make!
+        get :edit, :id => pst.to_param
+        response.should redirect_to(login_url(:then => edit_post_path(pst)))
       end
     end
 
@@ -56,11 +53,10 @@ describe PostsController do
     end
 
     it "rejects PUT post" do
-      posts.each do |p|
-        p.text += " updated"
-        put :update, :id => p.id, :post => p.attributes
-        response.should_not be_success
-      end
+      pst = Post.make!
+      pst.text += " updated"
+      put :update, :id => pst.id, :post => pst.attributes
+      response.should_not be_success
     end
 
     it "does not show unpublished posts" do
@@ -86,10 +82,9 @@ describe PostsController do
     end
 
     it "GET edit post page" do
-      posts.each do |p|
-        get :edit, :id => p.to_param
-        response.should render_template(:edit)
-      end
+      pst = Post.make!
+      get :edit, :id => pst.to_param
+      response.should render_template(:edit)
     end
 
     it "POST post" do
@@ -99,13 +94,12 @@ describe PostsController do
     end
 
     it "PUT post and redirect to it" do
-      posts.each do |p|
-        p.text += " updated"
-        put :update, :id => p.id, :post => p.attributes
-        response.should redirect_to(p)
-        np = Post.find(p.id)
-        np.text.should == p.text
-      end
+      pst = Post.make!
+      pst.text += " updated"
+      put :update, :id => pst.id, :post => pst.attributes
+      response.should redirect_to(pst)
+      new_pst = Post.find(pst.id)
+      new_pst.text.should == pst.text
     end
   end
 end
