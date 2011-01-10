@@ -31,7 +31,7 @@ describe PostsController do
 
     it_should_behave_like "both sides"
 
-    describe "should redirect to login page when it response to" do
+    describe "redirects to login page on" do
       it "GET drafts page" do
         get :drafts
         response.should redirect_to(login_url(:then => unpublished_posts_path))
@@ -41,32 +41,30 @@ describe PostsController do
         get :new
         response.should redirect_to(login_url(:then => new_post_path))
       end
-    end  
 
-    it "should not POST post" do
+      it "GET edit post page" do
+        posts.each do |p|
+          get :edit, :id => p.to_param
+          response.should redirect_to(login_url)
+        end
+      end
+    end
+
+    it "rejects POST post" do
       post :create, :post => Post.make.attributes
       response.should_not be_success
     end
 
-    it "should not find unpublished posts" do
-      lambda { get :show, :id => Post.make!(:published => false).to_param }.should raise_exception(ActiveRecord::RecordNotFound)
-    end
-
-    it "should redirect to login page when it response to every GET edit post page" do
-      posts.each do |p|
-        get :edit, :id => p.to_param
-        response.should be_redirect
-        response.should redirect_to(login_url)
-      end
-    end
-
-    it "should redirect to login page when it response to every PUT post" do
+    it "rejects PUT post" do
       posts.each do |p|
         p.text += " updated"
         put :update, :id => p.id, :post => p.attributes
-        response.should be_redirect
-        response.should redirect_to(login_url)
+        response.should_not be_success
       end
+    end
+
+    it "does not show unpublished posts" do
+      lambda { get :show, :id => Post.make!(:published => false).to_param }.should raise_exception(ActiveRecord::RecordNotFound)
     end
   end
 
