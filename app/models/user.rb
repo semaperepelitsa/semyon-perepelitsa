@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   end
 
   def encrypt(password)
-    new_password_salt! if self.password_salt.nil?
-    self.class.encrypt(password, self.password_salt)
+    new_password_salt! if password_salt.nil?
+    self.class.encrypt(password, password_salt)
   end
 
   def password=(val)
@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
   end
 
   def password?(val)
-    valid = self.password_hash == encrypt(val)
-    self.errors.add :password unless valid
+    valid = password_hash == encrypt(val)
+    errors.add :password unless valid
     valid
   end
 

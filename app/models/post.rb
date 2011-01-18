@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
   end
 
   def publish?
-    self.published_change == [false, true]
+    published_change == [false, true]
   end
 
   def to_param
