@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
       session[:admin] = true
       cookies.permanent[:admin] = true
     else
-      reset_session
+      session[:admin] = nil
       cookies.delete(:admin)
     end
   end
