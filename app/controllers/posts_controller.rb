@@ -57,6 +57,6 @@ class PostsController < ApplicationController
   private
 
   def set_publish_field
-    params[:post][:published] = !params[:publish].nil?
+    params[:post][:published] = params[:publish].present?
   end
 end
