@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    session[:admin]
+    !!session[:admin]
   end
 
   def admin!(login = true)
