@@ -101,5 +101,17 @@ describe PostsController do
       new_pst = Post.find(pst.id)
       new_pst.text.should == pst.text
     end
+
+    it "creates published post by submit button" do
+      pst = Post.make :published => nil
+      post :create, :post => pst.attributes, :publish => 'Save published'
+      assigns[:post].published?.should == true
+    end
+
+    it "creates unpublished post by submit button" do
+      pst = Post.make :published => nil
+      post :create, :post => pst.attributes, :commit => 'Save unpublished'
+      assigns[:post].published?.should == false
+    end
   end
 end
