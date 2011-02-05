@@ -10,13 +10,13 @@ class Post < ActiveRecord::Base
   end
   scope :unpublished, where(:published => false)
 
-  before_update :update_timestamps, :if => :publish?
+  before_update :update_timestamps, :if => :publishing?
 
   def update_timestamps
     self.created_at = self.updated_at = Time.now
   end
 
-  def publish?
+  def publishing?
     published_change == [false, true]
   end
 
