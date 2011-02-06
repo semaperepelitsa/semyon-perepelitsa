@@ -8,8 +8,6 @@ gem 'bluecloth'
 gem 'jquery-rails'
 gem 'russian'
 gem 'smart_titles'
-# FIXME: replace Array#pick provided by Rand gem with Array#sample when switched to 1.9.2
-gem 'rand'
 gem 'nokogiri', :group => :development
 
 group :development, :test do
