@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module PostsHelper
   def compact_timestamp(timestamp)
     full = l(timestamp)
