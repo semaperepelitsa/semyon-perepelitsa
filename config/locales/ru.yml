@@ -1,5 +1,6 @@
 ru:
   title: Поток мыслей
+  description: Заметки Семёна Перепелицы
   layouts:
     application:
       feedback: Книга отзывов и предложений
