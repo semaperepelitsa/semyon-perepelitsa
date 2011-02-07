@@ -16,7 +16,7 @@
   %body
     %header
       %nav
-        = link_to_unless current_page?(posts_url), t(:title), posts_path
+        = link_to_unless current_page?(posts_path), t(:title), posts_path
         = link_to_unless current_page?(unpublished_posts_path), '~', unpublished_posts_path, :class => "admin", :rel => 'nofollow'
         = yield :nav
         = link_to '+', new_post_path, :class => 'admin new_link', :rel => 'nofollow'
