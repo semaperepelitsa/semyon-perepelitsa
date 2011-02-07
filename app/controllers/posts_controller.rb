@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
 
     if @post.save
-      redirect_to(@post.published? ? posts_url : unpublished_posts_url, :notice => 'Post was successfully created.')
+      redirect_to(@post.published? ? posts_url : unpublished_posts_url)
     else
       render :action => "new"
     end
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(params[:post])
-      redirect_to(@post, :notice => 'Post was successfully updated.')
+      redirect_to(@post)
     else
       render :action => "edit"
     end
