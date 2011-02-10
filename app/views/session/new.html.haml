@@ -1,5 +1,8 @@
+- stylesheet 'form'
 = title
 = form_tag login_path do
-  = password_field_tag :password
-  = error_for :password, @user unless @user.nil?
   = hidden_field_tag :then, params[:then]
+  %ul.fields
+    %li
+      = password_field_tag :password
+      = error_for :password, @user unless @user.nil?
