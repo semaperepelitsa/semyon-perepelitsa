@@ -8,7 +8,7 @@
     :css
       .admin { display: none }
     = stylesheet_link_tag 'http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css', 'application'
-    = stylesheet_link_tag 'form' if admin?
+    = yield :stylesheets
     /[if lte IE 8]
       = javascript_include_tag 'http://cachedcommons.org/javascripts/html5/html5-enabled-min.js'
     = javascript_include_tag :defaults
