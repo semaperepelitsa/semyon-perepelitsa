@@ -1,5 +1,6 @@
 en:
   title: Thought Stream
+  description: Semyon Perepelitsa's notes
   layouts:
     application:
       feedback: Feedback
