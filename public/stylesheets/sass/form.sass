@@ -1,0 +1,31 @@
+@import "variables"
+
+ul.fields li
+  input.title, textarea.text
+    width: 640px
+    padding: 5px
+  textarea.text
+    height: 800px
+  input.title
+    font-size: $h1-size
+  input[type=password]
+    font-size: 1.5em
+    width: 100%
+
+ul.actions
+  margin-top: 1em
+  li
+    display: inline
+    a.delete:hover
+      color: $link
+    .default
+      font-weight: bold
+  li.delete
+    margin-top: -0.7em
+    float: right
+    a
+      color: red
+      text-decoration: none
+      font:
+        size: 2em
+        family: sans-serif
