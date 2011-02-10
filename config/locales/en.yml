@@ -20,6 +20,7 @@ en:
   session:
     new:
       title: Password
+      submit: This password is correct, I promise!
   date:
     formats:
       short: "%B %e"

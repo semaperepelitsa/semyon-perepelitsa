@@ -20,6 +20,7 @@ ru:
   session:
     new:
       title: Пароль
+      submit: Это правильный пароль, честное слово!
   activerecord:
     attributes:
       post:

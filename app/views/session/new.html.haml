@@ -6,3 +6,5 @@
     %li
       = password_field_tag :password
       = error_for :password, @user unless @user.nil?
+  %ul.actions
+    %li= submit_tag t('.submit')
