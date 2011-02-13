@@ -120,7 +120,7 @@ DEPENDENCIES
   mocha
   nokogiri
   rails (= 3.0.4)
-  rspec-rails (>= 2.0.0.beta)
+  rspec-rails (~> 2.4)
   russian
   smart_titles
   sqlite3-ruby
