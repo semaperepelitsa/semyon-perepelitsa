@@ -1,9 +1,9 @@
 Blog::Application.routes.draw do
   # Website ownership verification for Yandex
   match "yandex_#{APP_CONFIG['yandex_verification_key']}.txt" => proc { [200, {}, ""] }
-  
+
   match [APP_CONFIG['old_website']['path'], '*other'].join => redirect([APP_CONFIG['old_website']['url'], '%{other}'].join)
-  
+
   match 'i' => 'session#new', :as => :login, :via => :get
   match 'i' => 'session#create', :as => :login, :via => :post
   match 'logout' => 'session#destroy'
