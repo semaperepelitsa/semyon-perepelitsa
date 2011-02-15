@@ -1,4 +1,4 @@
 - title
 - content_for :nav do
   = link_to '#', post_path(@post)
-= render 'form'
+= render :partial => "form", :locals => { :post => @post }
