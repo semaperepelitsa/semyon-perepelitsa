@@ -4,9 +4,9 @@ Blog::Application.routes.draw do
 
   match [APP_CONFIG['old_website']['path'], '*other'].join => redirect([APP_CONFIG['old_website']['url'], '%{other}'].join)
 
-  match 'i' => 'session#new', :as => :login, :via => :get
-  match 'i' => 'session#create', :as => :login, :via => :post
-  match 'logout' => 'session#destroy'
+  get 'i' => 'session#new', :as => :login
+  post 'i' => 'session#create', :as => :login
+  get 'logout' => 'session#destroy'
 
   resources :stream, :controller => :posts, :as => :posts do
     get :drafts, :on => :collection, :as => :unpublished
