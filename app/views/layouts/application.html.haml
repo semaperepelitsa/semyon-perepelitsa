@@ -21,7 +21,7 @@
         = yield :nav
         = link_to '+', new_post_path, :class => 'admin new_link', :rel => 'nofollow'
     #container= yield
-    - unless @at_form
+    - unless @hide_footer
       %footer
         =raw t('.feedback', :email => mail_to('sema@sema.in'))
     = counter_tag
