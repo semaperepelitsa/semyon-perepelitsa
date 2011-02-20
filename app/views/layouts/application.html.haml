@@ -23,6 +23,5 @@
     #container= yield
     - unless @at_form
       %footer
-        = "#{t('.feedback')}:"
-        = mail_to 'sema@sema.in'
+        =raw t('.feedback', :email => mail_to('sema@sema.in'))
     = counter_tag

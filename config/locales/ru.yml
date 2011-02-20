@@ -3,7 +3,7 @@ ru:
   description: Заметки Семёна Перепелицы
   layouts:
     application:
-      feedback: Книга отзывов и предложений
+      feedback: "Книга отзывов и предложений: %{email}"
   posts:
     post:
       permalink: Постоянная ссылка на эту мысль

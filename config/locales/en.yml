@@ -3,7 +3,7 @@ en:
   description: Semyon Perepelitsa's notes
   layouts:
     application:
-      feedback: Feedback
+      feedback: "Feedback: %{email}"
   posts:
     post:
       permalink: Permanent link to this thought
