@@ -8,8 +8,11 @@ module PostsHelper
   end
 
   def timestamps_for(post)
-    res = compact_timestamp(post.created_at)
-    res << ' … '.html_safe + compact_timestamp(post.updated_at) unless post.published?
-    res
+    timestamps = if post.published?
+      [post.published_at]
+    else
+      [post.created_at, post.updated_at]
+    end
+    timestamps.map{ |t| compact_timestamp(t) }.join(' … ').html_safe
   end
 end

@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   validates_presence_of :text, :if => "published?"
 
-  scope :recent, order('created_at desc')
+  scope :recent, order('published_at desc')
   scope :last_updated, order('updated_at desc')
 
   scope :published, where(:published => true)
@@ -10,14 +10,24 @@ class Post < ActiveRecord::Base
   end
   scope :unpublished, where(:published => false)
 
-  before_update :update_timestamps, :if => :publishing?
+  before_save :set_published_at, :if => :publishing?
+  before_save :zero_published_at, :if => :unpublishing?
 
-  def update_timestamps
-    self.created_at = self.updated_at = Time.now
+  def set_published_at
+    self.published_at = Time.now
+  end
+
+  def zero_published_at
+    self.published_at = nil
   end
 
   def publishing?
-    published_change == [false, true]
+    published_change == [false, true] or
+    published_change == [nil, true]
+  end
+
+  def unpublishing?
+    published_change == [true, false]
   end
 
   def to_param
