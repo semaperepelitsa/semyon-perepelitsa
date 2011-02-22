@@ -4,5 +4,5 @@
   = markdownize post.text
   %details
     = timestamps_for post
-    = link_to '*', [:edit, post], :class => "admin", :rel => 'nofollow'
+    = link_to '*', [:edit, post] if admin?
     = link_to '#', post, :title => t('.permalink')
