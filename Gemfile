@@ -6,6 +6,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml-rails'
 gem 'bluecloth'
 gem 'jquery-rails'
+gem 'compass', '>= 0.10.6'
 gem 'russian'
 gem 'smart_titles'
 
