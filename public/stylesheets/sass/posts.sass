@@ -1,0 +1,87 @@
+@import "variables"
+
+body
+  padding: 0 2em
+
+body, textarea.text
+  font:
+    size: 1.1em
+    family: "Times New Roman", serif
+
+body > *, #container > *
+  margin:
+    left: auto
+    right: auto
+  min-width: 320px
+  max-width: 640px
+
+img
+  max-width: 100%
+
+h1, h2, input.title
+  font-family: "Trebuchet MS", sans-serif
+
+h1
+  margin-bottom: 0.2em
+  font-size: $h1-size
+
+h2
+  margin-bottom: 0.2em
+  font-size: 1.2em
+
+p
+  margin-bottom: 0.8em
+  line-height: 1.35em
+
+strong
+  font-weight: bold
+
+em
+  font-style: italic
+
+article
+  display: block
+  margin-top: 2em
+  details
+    text-align: right
+    color: gray
+    display: block
+
+header
+  display: block
+  margin: 1em auto
+  font-size: 1.2em
+  a:link, a:visited
+    color: black
+  a:hover, a:visited:hover
+    color: $hover
+  a.new_link
+    position: absolute
+    top: 0.1em
+    right: 0.1em
+    font-size: 2em
+    width: 1em
+    text-align: center
+    text-decoration: none
+    color: $link
+
+#container
+  margin-top: 1em
+
+footer
+  display: block
+  margin: 1em auto
+  text-align: center
+  font-size: 0.8em
+
+a:link
+  color: $link
+
+a:visited
+  color: $visited
+
+a:hover, a:visited:hover
+  color: $hover
+
+div.error
+  color: red

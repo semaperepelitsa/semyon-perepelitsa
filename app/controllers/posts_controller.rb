@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_filter :set_publish_field, :only => [:create, :update]
   caches_page :index, :show
   cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
+  layout 'posts'
 
   def index
     @posts = Post.published.recent

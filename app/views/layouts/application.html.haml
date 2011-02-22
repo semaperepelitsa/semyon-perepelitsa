@@ -4,24 +4,10 @@
     %meta{ :charset => Rails.application.config.encoding }
     %title= page_title
     = favicon_link_tag
-    = auto_discovery_link_tag :rss, posts_url(:rss)
-    :css
-      .admin { display: none }
-    = stylesheet_link_tag 'http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css', 'application'
+    = stylesheet_link_tag 'http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css'
+    = yield :head
     = yield :stylesheets
-    /[if lte IE 8]
-      = javascript_include_tag 'http://cachedcommons.org/javascripts/html5/html5-enabled-min.js'
-    = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
-    %header
-      %nav
-        = link_to_unless_current t(:title), posts_path
-        = link_to_unless_current '~', unpublished_posts_path, :class => "admin", :rel => 'nofollow'
-        = yield :nav
-        = link_to '+', new_post_path, :class => 'admin new_link', :rel => 'nofollow'
-    #container= yield
-    - unless @hide_footer
-      %footer
-        =raw t('.feedback', :email => mail_to('sema@sema.in'))
+    = content_for?(:page) ? yield(:page) : yield
     = counter_tag

@@ -1,8 +1,10 @@
 ru:
+  name: Семён Перепелица
+  email: sema@sema.in
   title: Поток мыслей
   description: Заметки Семёна Перепелицы
   layouts:
-    application:
+    posts:
       feedback: "Книга отзывов и предложений: %{email}"
   posts:
     post:

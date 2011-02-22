@@ -1,8 +1,10 @@
 en:
+  name: Semyon Perepelitsa
+  email: sema@sema.in
   title: Thought Stream
   description: Semyon Perepelitsa's notes
   layouts:
-    application:
+    posts:
       feedback: "Feedback: %{email}"
   posts:
     post:

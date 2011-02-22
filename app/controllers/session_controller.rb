@@ -1,4 +1,6 @@
 class SessionController < ApplicationController
+  layout 'posts'
+
   def new
     redirect_to root_path if admin?
   end
