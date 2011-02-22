@@ -4,5 +4,5 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Blog::Application.load_tasks
+SemyonPerepelitsa::Application.load_tasks
 

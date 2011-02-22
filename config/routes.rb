@@ -1,4 +1,4 @@
-Blog::Application.routes.draw do
+SemyonPerepelitsa::Application.routes.draw do
   # Website ownership verification for Yandex
   match "yandex_#{APP_CONFIG['yandex_verification_key']}.txt" => proc { [200, {}, ""] }
 
