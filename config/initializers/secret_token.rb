@@ -4,4 +4,7 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-SemyonPerepelitsa::Application.config.secret_token = '647df638ae821e9ddebba120d8334fd12ca153adf5c7bdcfd354a87885d39eefa7b2c3d5f96ed64b9799e0838328c7d2504d698be0a3a0f99b4424d00cf921e5'
+unless Rails.env.production?
+  ENV['SECRET_TOKEN'] ||= '4174e22bd547dbfe293e8b5b99f6525656f7c76fcd4cd20edd19171583dc3d1b9068703b34e7e280b3fee9f93f27ed594b80283d4a6e2c94cbcde2f71e6b90ac'
+end
+SemyonPerepelitsa::Application.config.secret_token = ENV['SECRET_TOKEN']
