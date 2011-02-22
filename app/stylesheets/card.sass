@@ -1,13 +1,12 @@
+@import compass/css3/box-shadow
+
 #card
   margin: 0 auto
 
   width: 450px
   height: 250px
 
-  $card-shadow: 0 0 8px #999
-  box-shadow: $card-shadow
-  -webkit-box-shadow: $card-shadow
-  -moz-box-shadow: $card-shadow
+  +box-shadow(#999, 0, 0, 8px)
 
   #clip
     text-align: right
