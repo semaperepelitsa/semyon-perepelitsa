@@ -3,37 +3,59 @@ require 'spec_helper'
 describe Post do
   def make_post_and_publish!(publish = true)
     @post = Post.make! :published => publish
-    @time = @post.created_at
+    @save_time = @post.created_at
+    @published_time = @post.published_at
   end
 
-  describe "should update created_at timestamp when it" do
-    it "is being published" do
-      make_post_and_publish! false
-      @post.published = true
-      @post.save!
-      @post.created_at.should > @time
-    end
-  end
-
-  describe "should not update created_at timestamp when it" do
-    after :each do
-      @post.save!
-      @post.created_at.should == @time
+  describe "#published_at" do
+    context "unpublished" do
+      it "should be nil" do
+        make_post_and_publish! false
+        @post.published_at.should == nil
+      end
     end
 
-    it "is not being published" do
-      make_post_and_publish! false
-      @post.text = 'Still draft'
+    context "published" do
+      it "should be set" do
+        make_post_and_publish!
+        @post.published_at.should <= @post.updated_at
+      end
     end
 
-    it "is still published" do
-      make_post_and_publish!
-      @post.text = 'Still published'
+    context "unpublished -> published" do
+      it "should be set" do
+        make_post_and_publish! false
+        @post.published = true
+        @post.save!
+        @post.published_at.should <= @post.updated_at
+      end
     end
 
-    it "is being unpublished" do
-      make_post_and_publish!
-      @post.published = false
+    context "unpublished -> unpublished" do
+      it "should be nil" do
+        make_post_and_publish! false
+        @post.text = 'Still draft'
+        @post.save!
+        @post.published_at.should == nil
+      end
+    end
+
+    context "published -> published" do
+      it "shouldn't be updated" do
+        make_post_and_publish!
+        @post.text = 'Still published'
+        @post.save!
+        @post.published_at.should == @published_time
+      end
+    end
+
+    context "published -> unpublished" do
+      it "should be nil" do
+        make_post_and_publish!
+        @post.published = false
+        @post.save!
+        @post.published_at.should == nil
+      end
     end
   end
 
