@@ -1,5 +1,6 @@
 @import font-sizes
 @import link-colors
+@import compass/utilities/links/link-colors
 
 ul.fields li
   input.title, textarea.text
@@ -21,7 +22,7 @@ ul.actions
     margin-top: -0.7em
     float: right
     a
-      color: red
+      +link-colors(red, $link-color)
       text-decoration: none
       font:
         size: 2em
