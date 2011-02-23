@@ -53,10 +53,11 @@ header
   display: block
   margin: 1em auto
   font-size: 1.2em
-  a:link, a:visited
-    color: black
-  a:hover, a:visited:hover
-    color: $link-hover-color
+  a
+    &:link, &:visited
+      color: black
+    &:hover, &:visited:hover
+      color: $link-hover-color
   a.new_link
     position: absolute
     top: 0.1em
