@@ -1,3 +1,8 @@
+- content_for :head
+  %link{ rel: "openid.server",    href: APP_CONFIG['openid_server']   }
+  %link{ rel: "openid2.provider", href: APP_CONFIG['openid_server']   }
+  %link{ rel: "openid.delegate",  href: APP_CONFIG['openid_delegate'] }
+  %link{ rel: "openid2.local_id", href: APP_CONFIG['openid_delegate'] }
 - content_for :page do
   = yield
 
