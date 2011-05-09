@@ -2,14 +2,14 @@ class SessionController < ApplicationController
   layout 'posts'
 
   def new
-    redirect_to root_path if admin?
+    redirect_to posts_url if admin?
   end
 
   def create
     @user = User.first
     if @user.password?(params[:password])
       admin!
-      redirect_to params[:then] || root_path
+      redirect_to params[:then] || posts_url
     else
       render :new
     end
@@ -17,6 +17,6 @@ class SessionController < ApplicationController
 
   def destroy
     admin! false
-    redirect_to root_path
+    redirect_to posts_url
   end
 end
