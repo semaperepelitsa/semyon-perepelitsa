@@ -42,7 +42,6 @@ GEM
       ZenTest (>= 4.4.1)
     awesome_print (0.3.2)
     bluecloth (2.0.9)
-    bond (0.4.0)
     builder (2.1.2)
     compass (0.10.6)
       haml (>= 3.0.4)
@@ -89,10 +88,6 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
-    ripl (0.3.2)
-      bond (~> 0.4.0)
-    ripl-rails (0.1.1)
-      ripl (>= 0.3.1)
     rspec (2.4.0)
       rspec-core (~> 2.4.0)
       rspec-expectations (~> 2.4.0)
@@ -131,7 +126,6 @@ DEPENDENCIES
   mocha
   nokogiri
   rails (= 3.0.4)
-  ripl-rails
   rspec-rails (~> 2.4)
   russian
   smart_titles

@@ -19,7 +19,6 @@ group :development, :test do
 
   # For development
   gem 'nokogiri'
-  gem 'ripl-rails', :require => 'ripl/rails'
   gem 'awesome_print'
 end
 
