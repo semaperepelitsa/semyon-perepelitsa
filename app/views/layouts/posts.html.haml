@@ -15,6 +15,6 @@
   #content= yield
   - unless @hide_footer
     %footer
-      =raw t('.feedback', :email => mail_to(t :email))
+      != t('.feedback', :email => mail_to(t :email))
 
 = render :file => 'layouts/application'
