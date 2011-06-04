@@ -10,7 +10,7 @@ module FriendlyURL
   end
 
   def to_param
-    if permalink.present?
+    if permalink?
       [id, permalink].join('-')
     else
       id.to_s
