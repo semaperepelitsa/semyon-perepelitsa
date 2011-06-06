@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/koppen/hassle.git
-  revision: a08c757bce033cebc7ef8a4a3a831127afcb956a
-  specs:
-    hassle (0.0.1)
-      haml
-      rack
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -153,7 +145,6 @@ DEPENDENCIES
   coffee-script
   compass
   haml-rails
-  hassle!
   jquery-rails
   machinist (>= 2.0.0.beta2)
   mocha
