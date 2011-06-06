@@ -143,7 +143,7 @@ DEPENDENCIES
   awesome_print
   bluecloth
   coffee-script
-  compass (>= 0.10.6)
+  compass
   haml-rails
   hassle!
   jquery-rails

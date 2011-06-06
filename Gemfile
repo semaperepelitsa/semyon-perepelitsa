@@ -8,7 +8,7 @@ gem 'sqlite3'
 # Asset template engines
 gem 'haml-rails'
 gem 'sass'
-gem 'compass', '>= 0.10.6'
+gem 'compass', require: false
 gem 'coffee-script'
 gem 'uglifier'
 
