@@ -3,8 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '>= 3.1.0.rc1'
 gem 'rake', '~> 0.8.7'
 
-gem 'sqlite3'
-
 # Asset template engines
 gem 'haml-rails'
 gem 'sass'
@@ -26,10 +24,12 @@ group :development, :test do
   gem 'mocha'
 
   # For development
+  gem 'sqlite3'
   gem 'nokogiri'
   gem 'awesome_print'
 end
 
 group :production do
   gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
+  gem 'pg'
 end
