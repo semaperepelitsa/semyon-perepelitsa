@@ -31,6 +31,7 @@ end
 
 group :production do
   gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
+  gem 'therubyracer-heroku'
   gem 'pg'
   gem 'thin'
 end
