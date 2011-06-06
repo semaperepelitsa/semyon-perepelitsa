@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def stylesheet *args
-    content_for(:stylesheets) { stylesheet_link_tag(*args) }
-  end
-
   def markdownize text
     BlueCloth.new(text).to_html.html_safe
   end
