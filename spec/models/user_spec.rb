@@ -30,7 +30,7 @@ describe User do
 
   it "should reject invalid password and add an error" do
     @user.password?(pass.to_s + 'a').should == false
-    @user.errors.should have_key(:password)
+    @user.errors[:password].should be_present
   end
 
   it "should not store raw password" do
