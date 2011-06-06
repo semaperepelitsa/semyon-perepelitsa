@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :admin?
+  helper_method :admin?, :guest?
 
   protected
 
@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
   # Returns true if the current user is an admin, false otherwise.
   def admin?
     !!session[:admin]
+  end
+
+  def guest?
+    !admin?
   end
 
   # Set up admin flag session variable.

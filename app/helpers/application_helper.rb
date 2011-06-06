@@ -13,6 +13,6 @@ module ApplicationHelper
   end
 
   def counter_tag
-    render "shared/counter" if Rails.env.production? && !admin?
+    render "shared/counter" if Rails.env.production? && guest?
   end
 end
