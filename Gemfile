@@ -32,4 +32,5 @@ end
 group :production do
   gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
   gem 'pg'
+  gem 'thin'
 end
