@@ -1,6 +1,5 @@
 - content_for :head do
   = auto_discovery_link_tag :rss, posts_url(:rss)
-  = stylesheet_link_tag "posts"
   /[if lte IE 8]
     = javascript_include_tag 'http://cachedcommons.org/javascripts/html5/html5-enabled-min.js'
 

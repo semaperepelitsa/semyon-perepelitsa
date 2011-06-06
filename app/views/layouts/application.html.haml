@@ -5,6 +5,7 @@
     %title= page_title
     = favicon_link_tag
     = yield :head
+    = stylesheet_link_tag "application"
     = yield :stylesheets
     = csrf_meta_tag
   %body
