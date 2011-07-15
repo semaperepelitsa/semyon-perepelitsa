@@ -24,6 +24,6 @@ class User < ActiveRecord::Base
   end
 
   def new_password_salt!
-    self.password_salt = ActiveSupport::SecureRandom.hex(16)
+    self.password_salt = SecureRandom.hex(16)
   end
 end
