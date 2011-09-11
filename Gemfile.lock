@@ -42,10 +42,13 @@ GEM
     bluecloth (2.0.9)
     builder (3.0.0)
     chunky_png (1.2.1)
+    coffee-rails (3.1.0)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.1.0.rc1)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.1.1)
+    coffee-script-source (1.1.2)
     compass (0.11.5)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -119,7 +122,11 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.6.0)
-    sass (3.1.2)
+    sass (3.1.7)
+    sass-rails (3.1.0)
+      actionpack (~> 3.1.0)
+      railties (~> 3.1.0)
+      sass (>= 3.1.4)
     smart_titles (0.1.2)
       actionpack
       activesupport
@@ -148,7 +155,7 @@ PLATFORMS
 
 DEPENDENCIES
   bluecloth
-  coffee-script
+  coffee-rails (~> 3.1.0)
   compass
   haml-rails
   jquery-rails
@@ -159,7 +166,7 @@ DEPENDENCIES
   rails (~> 3.1.0)
   rspec-rails (~> 2.6.1)
   russian!
-  sass
+  sass-rails (~> 3.1.0)
   smart_titles
   sqlite3
   therubyracer-heroku
