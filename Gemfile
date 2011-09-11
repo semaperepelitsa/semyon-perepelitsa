@@ -24,7 +24,6 @@ group :development, :test do
   # For development
   gem 'sqlite3'
   gem 'nokogiri'
-  gem 'awesome_print'
 end
 
 group :production do
