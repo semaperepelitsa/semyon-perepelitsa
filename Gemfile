@@ -7,7 +7,7 @@ gem 'rails', '~> 3.1.0'
 group :assets do
   gem 'haml-rails'
   gem 'sass-rails', "~> 3.1.0"
-  gem 'compass', require: false
+  gem 'compass', '~> 0.12.alpha.0'
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
