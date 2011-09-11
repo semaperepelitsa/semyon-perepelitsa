@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/semaperepelitsa/russian.git
+  revision: 696edff169b3d0d93c5ef537e4e112d626e7cf0b
+  branch: rails-3.1
+  specs:
+    russian (0.2.7)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -112,7 +119,6 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.6.0)
-    russian (0.2.7)
     sass (3.1.2)
     smart_titles (0.1.2)
       actionpack
@@ -154,7 +160,7 @@ DEPENDENCIES
   pg
   rails (~> 3.1.0)
   rspec-rails (~> 2.6.1)
-  russian
+  russian!
   sass
   smart_titles
   sqlite3

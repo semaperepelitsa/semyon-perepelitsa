@@ -12,7 +12,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 
 gem 'bluecloth'
-gem 'russian'
+gem 'russian', git: "git://github.com/semaperepelitsa/russian.git", branch: 'rails-3.1'
 gem 'smart_titles'
 
 group :development, :test do
