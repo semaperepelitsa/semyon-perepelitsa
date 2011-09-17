@@ -7,7 +7,7 @@ gem 'haml-rails'
 gem 'bluecloth'
 gem 'jquery-rails'
 gem 'compass', '>= 0.10.6'
-gem 'russian'
+gem 'russian', git: "git://github.com/semaperepelitsa/russian.git"
 gem 'smart_titles'
 
 group :development, :test do
