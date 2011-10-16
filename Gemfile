@@ -5,13 +5,13 @@ gem 'rails', '~> 3.1.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'haml-rails'
   gem 'sass-rails', "~> 3.1.0"
   gem 'compass', '~> 0.12.alpha.0'
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
 
+gem 'haml-rails'
 gem 'jquery-rails'
 
 gem 'bluecloth'
