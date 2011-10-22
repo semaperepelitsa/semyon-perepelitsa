@@ -6,12 +6,6 @@ GIT
       haml
       rack
 
-GIT
-  remote: git://github.com/semaperepelitsa/russian.git
-  revision: 57af7fee22f9c324ac6313064c36e582d58ba8df
-  specs:
-    russian (0.2.7)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -107,6 +101,7 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.4.0)
+    russian (0.2.7)
     smart_titles (0.1.2)
       actionpack
       activesupport
@@ -132,6 +127,6 @@ DEPENDENCIES
   nokogiri
   rails (= 3.0.7)
   rspec-rails (~> 2.4)
-  russian!
+  russian
   smart_titles
   sqlite3-ruby
