@@ -4,7 +4,7 @@
     %li
       = f.text_field :title, :class => 'title'
     %li
-      = f.text_area :text, :class => 'text'
+      = f.text_area :body_markdown, :class => 'text'
       = error_for :text, post
   %ul.actions
     %li= f.submit t('.save_and_publish'), :name => :publish, :class => ('default' if post.published?)

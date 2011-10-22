@@ -1,7 +1,7 @@
 %article
   - if post.title.present?
     %h1= post.title
-  = markdownize post.text
+  != post.body
   %details
     = timestamps_for post
     = link_to '*', [:edit, post] if admin?

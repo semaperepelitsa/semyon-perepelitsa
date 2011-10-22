@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def markdownize text
-    BlueCloth.new(text).to_html.html_safe
-  end
-
   def error_for(field, model)
     res = ''
     human_field = model.class.human_attribute_name(field)

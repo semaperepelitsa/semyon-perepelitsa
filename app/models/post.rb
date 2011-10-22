@@ -6,4 +6,8 @@ class Post < ActiveRecord::Base
 
   scope :recent, order('published_at desc')
   scope :last_updated, order('updated_at desc')
+
+  def body
+    BlueCloth.new(body_markdown).to_html if body_markdown
+  end
 end
