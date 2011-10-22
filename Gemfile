@@ -1,27 +1,38 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '~> 3.1.0'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "~> 3.1.0"
+  gem 'compass', '~> 0.12.alpha.0'
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
 gem 'haml-rails'
-gem 'bluecloth'
 gem 'jquery-rails'
-gem 'compass', '>= 0.10.6'
-gem 'russian'
+
+gem 'bluecloth'
+gem 'russian', git: "git://github.com/semaperepelitsa/russian.git", branch: 'rails-3.1'
 gem 'smart_titles'
 
 group :development, :test do
-  # For testing
-  gem 'rspec-rails', '~> 2.4'
-  gem 'autotest'
-  gem 'machinist', '>=2.0.0.beta2'
-  gem 'mocha'
+  gem 'sqlite3'
+  gem 'rspec-rails', '~> 2.6.1'
+end
 
-  # For development
+group :test do
+  gem 'mocha'
+  gem 'machinist', '>=2.0.0.beta2'
+end
+
+group :development do
   gem 'nokogiri'
-  gem 'awesome_print'
 end
 
 group :production do
-  gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
+  gem 'pg'
+  gem 'thin'
 end

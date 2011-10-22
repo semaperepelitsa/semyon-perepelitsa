@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def stylesheet *args
-    content_for(:stylesheets) { stylesheet_link_tag(*args) }
-  end
-
   def markdownize text
     BlueCloth.new(text).to_html.html_safe
   end
@@ -17,16 +13,6 @@ module ApplicationHelper
   end
 
   def counter_tag
-    if Rails.env.production? && !admin?
-      raw <<EOC
-<!-- Yandex.Metrika -->
-<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
-<div style="display:none;"><script type="text/javascript">
-try { var yaCounter1309037 = new Ya.Metrika(1309037); } catch(e){}
-</script></div>
-<noscript><div style="position:absolute"><img src="//mc.yandex.ru/watch/1309037" alt="" /></div></noscript>
-<!-- /Yandex.Metrika -->
-EOC
-    end
+    render "shared/counter" if Rails.env.production? && guest?
   end
 end
