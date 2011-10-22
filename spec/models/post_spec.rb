@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe Post do
@@ -61,15 +62,15 @@ describe Post do
 
   describe "should automatically generate permalink from title when it" do
     before :all do
-      @post = Post.make!(:title => 'Permalink test')
+      @post = Post.make!(:title => 'Permalink тест')
     end
     it "is created" do
       @post.permalink.should == 'permalink-test'
     end
     it "is updated" do
-      @post.title = 'Changed title'
+      @post.title = 'Changed title тест'
       @post.save!
-      @post.permalink.should == 'changed-title'
+      @post.permalink.should == 'changed-title-test'
     end
   end
 
