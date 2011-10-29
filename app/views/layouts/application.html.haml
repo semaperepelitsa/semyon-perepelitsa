@@ -2,7 +2,7 @@
 %html{ :lang => I18n.locale }
   %head
     %meta{ :charset => Rails.application.config.encoding }
-    %title= page_title
+    %title= head_title
     = favicon_link_tag
     = yield :head
     = stylesheet_link_tag "application"
