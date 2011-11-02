@@ -28,6 +28,8 @@ group :test do
 end
 
 group :development do
+  gem 'guard-livereload'
+
   gem 'nokogiri'
 end
 
