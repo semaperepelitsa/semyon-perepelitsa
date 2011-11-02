@@ -35,7 +35,7 @@ describe Post do
     context "unpublished -> unpublished" do
       it "should be nil" do
         make_post_and_publish! false
-        @post.text = 'Still draft'
+        @post.body_markdown = 'Still draft'
         @post.save!
         @post.published_at.should == nil
       end
@@ -44,7 +44,7 @@ describe Post do
     context "published -> published" do
       it "shouldn't be updated" do
         make_post_and_publish!
-        @post.text = 'Still published'
+        @post.body_markdown = 'Still published'
         @post.save!
         @post.published_at.should == @published_time
       end

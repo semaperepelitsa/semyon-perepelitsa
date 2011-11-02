@@ -54,7 +54,7 @@ describe PostsController do
 
     it "rejects PUT post" do
       pst = Post.make!
-      pst.text += " updated"
+      pst.body_markdown += " updated"
       put :update, :id => pst.id, :post => pst.attributes
       response.should_not be_success
     end
@@ -90,16 +90,16 @@ describe PostsController do
     it "POST post" do
       pst = Post.make
       post :create, :post => pst.attributes
-      assigns[:post].text == pst.text
+      assigns[:post].body_markdown == pst.body_markdown
     end
 
     it "PUT post and redirect to it" do
       pst = Post.make!
-      pst.text += " updated"
+      pst.body_markdown += " updated"
       put :update, :id => pst.id, :post => pst.attributes
       response.should redirect_to(pst)
       new_pst = Post.find(pst.id)
-      new_pst.text.should == pst.text
+      new_pst.body_markdown.should == pst.body_markdown
     end
 
     it "creates published post by submit button" do
