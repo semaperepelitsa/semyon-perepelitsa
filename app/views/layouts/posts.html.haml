@@ -6,7 +6,7 @@
 - content_for :page do
   %header
     %nav
-      = link_to_unless_current t(:title), posts_path
+      = link_to_unless params[:controller] == 'posts' && params[:action] == 'index', t(:title), posts_path
       = link_to_unless_current '~', unpublished_posts_path if admin?
       = yield :nav
       = link_to '+', new_post_path, :class => 'new_link' if admin?
