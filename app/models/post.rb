@@ -8,6 +8,12 @@ class Post < ActiveRecord::Base
   scope :last_updated, order('updated_at desc')
 
   def body
-    BlueCloth.new(body_markdown).to_html if body_markdown
+    markdown.render(body_markdown) if body_markdown
+  end
+
+private
+
+  def markdown
+    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
   end
 end

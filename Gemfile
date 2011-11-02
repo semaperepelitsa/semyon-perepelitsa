@@ -14,7 +14,7 @@ end
 gem 'haml-rails'
 gem 'jquery-rails'
 
-gem 'bluecloth'
+gem 'redcarpet', '~> 2.0.0b5'
 gem 'smart_titles'
 
 group :development, :test do
