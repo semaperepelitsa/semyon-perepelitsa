@@ -12,12 +12,10 @@ class ScrollTitle
     y = $(window).scrollTop()
     title = ''
     $("article").each ->
-      pos = $(@).offset()
+      pos = $(@).position()
       top = pos.top
-      bottom = top + $(@).height()
-      # console.log top
-      if y > top - 300 and y < bottom - 300
-        title = $(@).find('h1').text()
-        # return false if title # break
+      return false if top > y + window.innerHeight
+      title = $(@).find('h1').text()
+      return false if top > y
     title or= @default_title
     document.title = title
