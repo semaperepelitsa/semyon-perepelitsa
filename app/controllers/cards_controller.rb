@@ -1,6 +1,6 @@
-class HomeController < ApplicationController
-  layout 'home'
-  def index
+class CardsController < ApplicationController
+  layout 'cards'
+  def show
     respond_to do |f|
       f.html
       f.xrds do
