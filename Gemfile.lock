@@ -132,7 +132,7 @@ GEM
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
       sass (>= 3.1.4)
-    smart_titles (0.2.1)
+    smart_titles (0.3.0)
       actionpack
       activesupport
     sprockets (2.0.3)
@@ -172,7 +172,7 @@ DEPENDENCIES
   rspec-rails (~> 2.6.1)
   russian (~> 0.6.0)
   sass-rails (~> 3.1.0)
-  smart_titles
+  smart_titles (~> 0.3.0)
   sqlite3
   thin
   uglifier

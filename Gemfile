@@ -15,7 +15,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 
 gem 'redcarpet', '~> 2.0.0b5'
-gem 'smart_titles'
+gem 'smart_titles', '~> 0.3.0'
 gem 'russian', '~> 0.6.0'
 
 group :development, :test do
