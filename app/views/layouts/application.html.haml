@@ -4,8 +4,8 @@
     %meta{ :charset => Rails.application.config.encoding }
     %title= head_title
     = favicon_link_tag
-    = yield :head
     = stylesheet_link_tag "application"
+    = yield :head
     = csrf_meta_tag
   %body
     = content_for?(:page) ? yield(:page) : yield
